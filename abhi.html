@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="emp.css">
+</head>
+
+    
+
+<body style="background-image: url(waterdr.jpg.jpg);">
+    
+    <title>student info</title>
+    <h1>details</h1>
+   <form action="/submit_employee" method="get">
+        <div class="formm">
+            <label for="emp_name">Full Name:</label><br>
+        <input type="text" id="emp_name" name="emp_name" required><br><br>
+
+        <label for="emp_email">Email:</label><br>
+        <input type="email" id="emp_email" name="emp_email" required><br><br>
+
+        <label for="emp_phone">Phone Number:</label><br>
+        <input type="tel" id="emp_phone" name="emp_phone" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label><br>
+
+        
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+
+        <input type="radio" id="other" name="gender" value="Other"> 
+        <label for="other">Other</label><br><br>
+
+        <input type="submit" value="Submit">
+       </div>
+    </form>
+    <div class="container">
+        <div class="box1">
+            
+        <ul><h3>qualifications</h3>
+            <li>btech</li>
+            <li>masters in iith</li>
+            <li>internships</li>
+        </ul>
+        </div>
+        <div class="box2">
+            <!-- <h3>acheivements</h3> -->
+            <ul><h3>acheivements</h3>
+                <li>Mentored 3 junior developers</li>
+                <li>Resolved a critical production bug</li>
+                <li>Achieved 100% unit test coverage</li>
+            </ul>
+        </div>
+       
+    </div>
+
+    <style>
+    body {
+      background-color: lightblue;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        background-color: lightgreen;
+      }
+    
+  </style>
+        
+    
+</body>
+</html>
