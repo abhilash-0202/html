@@ -1,0 +1,48 @@
+form{
+    text-align: center;
+    width: ;
+    height: auto;
+    text-align: center;
+    border: 1;
+    border-radius: 20px;
+}
+.container{
+    display: flex;
+    margin: auto;
+
+}
+.container{
+    background-color: rgb(119, 226, 183);
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+}
+
+    h3 {
+  margin-bottom: 10px;
+}
+li{
+    
+    font-size: large;
+    
+}
+.box1{
+    margin-right: 100px;
+    
+}
+.box2{
+   
+}
+body{
+    background: url();
+}
+.formm{
+    text-align: center;
+    padding: 10px;
+    width: 60%;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgb(199, 199, 199);
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App with Timer and Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        #quiz-container {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .option {
+            background: #eee;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option:hover {
+            background: #ddd;
+        }
+        #timer {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #leaderboard {
+            margin-top: 30px;
+        }
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz App</h1>
+    <div id="quiz-container">
+        <div id="timer">Time left: <span id="time">10</span>s</div>
+        <div id="question">Question text</div>
+        <div id="options"></div>
+        <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["Paris", "London", "Rome", "Berlin"],
+                answer: "Paris"
+            },
+            {
+                question: "2 + 2 = ?",
+                options: ["3", "4", "5", "6"],
+                answer: "4"
+            },
+            {
+                question: "Which is a programming language?",
+                options: ["HTML", "CSS", "JavaScript", "Photoshop"],
+                answer: "JavaScript"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let timer;
+        let timeLeft = 10;
+
+        const questionEl = document.getElementById("question");
+        const optionsEl = document.getElementById("options");
+        const timeEl = document.getElementById("time");
+        const startBtn = document.getElementById("start-btn");
+
+        startBtn.addEventListener("click", startQuiz);
+
+        function startQuiz() {
+            startBtn.style.display = "none";
+            showQuestion();
+            startTimer();
+        }
+
+        function showQuestion() {
+            if (currentQuestion >= questions.length) {
+                endQuiz();
+                return;
+            }
+            const q = questions[currentQuestion];
+            questionEl.textContent = q.question;
+            optionsEl.innerHTML = "";
+            q.options.forEach(opt => {
+                const div = document.createElement("div");
+                div.classList.add("option");
+                div.textContent = opt;
+                div.onclick = () => checkAnswer(opt);
+                optionsEl.appendChild(div);
+            });
+        }
+
+        function checkAnswer(selected) {
+            if (selected === questions[currentQuestion].answer) {
+                score++;
+            }
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            clearInterval(timer);
+            currentQuestion++;
+            timeLeft = 10;
+            showQuestion();
+            startTimer();
+        }
+
+        function startTimer() {
+            timeEl.textContent = timeLeft;
+            timer = setInterval(() => {
+                timeLeft--;
+                timeEl.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    nextQuestion();
+                }
+            }, 1000);
+        }
+
+        function endQuiz() {
+            clearInterval(timer);
+            questionEl.textContent = `Quiz Over! Your score is ${score}/${questions.length}`;
+            optionsEl.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

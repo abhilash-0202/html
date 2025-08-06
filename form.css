@@ -1,0 +1,80 @@
+#ani{
+    width: 745px;
+    height: 300px;
+}
+#alice{
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    display: block;
+
+}
+.i1{
+   text-align: center;
+   text-decoration: dashed;
+   font: bolder;
+   font-weight: bolder;
+   font-style: italic;
+   background-color: rgb(234, 158, 70);
+   height: 50PX;
+}
+.i2{
+    display: flex;
+     /* margin: 0 auto;
+    display: block; */
+    padding: 30px;
+
+}
+.i4{
+    margin-left: 40px;
+    margin-right: 60px;
+}
+.i3{
+    text-align: center;
+    /* margin-top: 100px; */
+    background-color: rgb(127, 167, 154);
+    height: 400PX;
+    width: 300PX;
+    box-shadow: 0 0 20px;
+    border-radius: 20px;
+
+    /* box-shadow: 0 0 20px; */
+}
+.i5{
+     text-align: center;
+    /* margin-top: 100px; */
+    background-color: rgb(127, 167, 154);
+    height: 400PX;
+    width: 300PX;
+     box-shadow: 0 0 20px;
+    border-radius: 20px;
+}
+#b1{
+    margin-top: 125px;
+}
+#b2{
+    margin-top: 20px;
+
+}
+#b3{
+    margin-top: 20px;
+}
+#a1{
+    margin-top: 125px;
+}
+#im{
+    height: 60px;
+    width: 50px;
+    margin-top: 20px;
+}
+.c1{
+    display: flex;
+    
+    text-align: center;
+}
+.c2{
+    margin-left: 500px;
+}
+#fo{
+    /* background-image: url(https://media1.tenor.com/m/Y7l9js6CUbgAAAAd/running-for-our-life-ryohei-arisu.gif); */
+}
